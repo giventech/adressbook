@@ -1,0 +1,39 @@
+<div class="container">
+
+    <mat-icon (click) = "goToAddressForm()">navigate_before</mat-icon>
+    <form [formGroup]="profileForm">
+        <h3>Names</h3>
+        <mat-form-field class="col-md-12">
+            <input matInput placeholder="Full Name" formControlName="firstName" required>
+        </mat-form-field>
+    
+        <mat-form-field class="col-md-12">
+            <input  matInput placeholder="Last Name"type="text" formControlName="lastName">
+        </mat-form-field>
+        <!-- -->
+    <div formGroupName="address">
+        <h3>Address</h3>
+    
+        <mat-form-field class="col-md-12">
+            <input matInput type="text" formControlName="street">
+        </mat-form-field>  
+        
+        <mat-form-field class="col-md-12">
+            <input  matInput  type="text" formControlName="city">
+        </mat-form-field>
+        
+        <mat-form-field class="col-md-12">
+        <input  matInput  type="text" formControlName="state">
+        </mat-form-field>
+    
+        <mat-form-field class="col-md-12">
+        <input  matInput type="text" formControlName="zip">
+        </mat-form-field>
+    </div>
+    </form>
+
+    <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm.valid">Submit</button>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm.valid">Cancel</button>
+    </mat-card-actions>
+</div>
