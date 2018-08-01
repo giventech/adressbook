@@ -8,16 +8,16 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputBase, MatInputModule} from '@angular/material'
 
 import { AppComponent } from './app.component';
-import { AddressBookHeaderComponent } from './address-book-header/address-book-header.component';
-import { AddressBookFooterComponent } from './address-book-footer/address-book-footer.component';
-import { AddressBookContentComponent } from './address-book-content/address-book-content.component';
-import { AddressBookListComponent } from './address-book-list/address-book-list.component';
-import { AddressBookItemComponent } from './address-book-item/address-book-item.component';
-import { AddressBookItemDetailsComponent } from './address-book-item-details/address-book-item-details.component';
-import { AddressBookItemFormComponent } from './address-book-item-form/address-book-item-form.component';
-import { AddressBookSearchComponent } from './address-book-search/address-book-search.component';
+import { AddressBookHeaderComponent } from './components/address-book-header/address-book-header.component';
+import { AddressBookFooterComponent } from './components/address-book-footer/address-book-footer.component';
+import { AddressBookContentComponent } from './components/address-book-content/address-book-content.component';
+import { AddressBookListComponent } from './components/address-book-list/address-book-list.component';
+import { AddressBookItemComponent } from './components/address-book-item/address-book-item.component';
+import { AddressBookItemDetailsComponent } from './components/address-book-item-details/address-book-item-details.component';
+import { AddressBookItemFormComponent } from './components/address-book-item-form/address-book-item-form.component';
+import { AddressBookSearchComponent } from './components/address-book-search/address-book-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
