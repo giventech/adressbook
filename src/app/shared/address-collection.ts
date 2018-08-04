@@ -15,4 +15,10 @@ export const addresses: address[] =
       department: 'User Experience Design',
       phonenumber: '0413917103'
     },
+     {
+      firstname: 'Director2',
+      lastname: 'ginape',
+      department: 'User Experience Design',
+      phonenumber: '0413917103'
+    },
  ]
