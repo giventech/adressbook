@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as globals from '../../shared/address-collection';
 
 
 @Component({
@@ -20,11 +21,20 @@ export class AddressBookItemFormComponent {
       zip: ['']
     }),
   });
-  
+ 
   constructor(private fb: FormBuilder, private router:Router) { }
   // Naivgate back to the adress List 
   goToAddressForm () {
     this.router.navigateByUrl('/addresslist');
+  }
+  //Collects the adresss 
+  addAddressItem () {
+    if (this.profileForm.valid) {
+        let   newAddressItemData  =  this.profileForm.value;
+        globals.addresses.push(newAddressItemData);
+    } else {
+      console.log("The form is not valid ")
+    }
   }
   
 }
