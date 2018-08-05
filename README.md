@@ -52,4 +52,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  
 ## Time Tracking
 04/08/2018 - 2h - TDD Add form + README documentation
+04/08/2018 - 2h - TDD Added @Output events and Unit tested form submission (README documentation) - TODO: Run test & Addd Validation
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as globals from '../../shared/address-collection';
@@ -11,15 +11,20 @@ import * as globals from '../../shared/address-collection';
 })
 
 export class AddressBookItemFormComponent {
+
+
+  @Output() addedAddress = new EventEmitter<globals.address>();
   profileForm = this.fb.group({
-    firstName: [''],
-    lastName: [''],
-    address: this.fb.group({
-      street: [''],
-      city: [''],
-      state: [''],
-      zip: ['']
-    }),
+    firstname: [''],
+    lastname: [''],
+    department: [''],
+    phonenumber: ['']
+    // address: this.fb.group({
+    //   street: [''],
+    //   city: [''],
+    //   state: [''],
+    //   zip: ['']
+    // }),
   });
  
   constructor(private fb: FormBuilder, private router:Router) { }
@@ -31,9 +36,14 @@ export class AddressBookItemFormComponent {
   addAddressItem () {
     if (this.profileForm.valid) {
         let   newAddressItemData  =  this.profileForm.value;
+      
         globals.addresses.push(newAddressItemData);
+
+        //TODO Test that output is emitted properly 
+        this.addedAddress.emit(newAddressItemData);
+      console.log(this.profileForm.value);
     } else {
-      console.log("The form is not valid ")
+        console.log("The form is not valid ")
     }
   }
   

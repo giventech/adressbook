@@ -1,17 +1,28 @@
 <div class="container">
 
     <mat-icon (click) = "goToAddressForm()">navigate_before</mat-icon>
-    <form [formGroup]="profileForm">
+    <form   (ngSubmit)="addAddressItem()"
+        [formGroup]="profileForm">
         <h3>Names</h3>
         <mat-form-field class="col-md-12">
-            <input matInput placeholder="Full Name" formControlName="firstName" required>
+            <input matInput placeholder="Full Name" formControlName="firstname" required>
         </mat-form-field>
     
         <mat-form-field class="col-md-12">
-            <input  matInput placeholder="Last Name"type="text" formControlName="lastName">
+            <input  matInput placeholder="Last Name"type="text" formControlName="lastname">
         </mat-form-field>
+
+        <mat-form-field class="col-md-12">
+            <input  matInput placeholder="Department"type="text" formControlName="department">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-12">
+            <input  matInput placeholder="Phone Number"type="text" formControlName="phonenumber">
+        </mat-form-field>
+        
         <!-- -->
-    <div formGroupName="address">
+
+      <!-- <div formGroupName="address">
         <h3>Address</h3>
     
         <mat-form-field class="col-md-12">
@@ -29,11 +40,13 @@
         <mat-form-field class="col-md-12">
         <input  matInput type="text" formControlName="zip">
         </mat-form-field>
-    </div>
-    </form>
+    </div> -->
+   
 
     <mat-card-actions>
             <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm.valid">Submit</button>
             <button mat-raised-button type="submit" color="primary" [disabled]="!profileForm.valid">Cancel</button>
     </mat-card-actions>
+
+</form>
 </div>
